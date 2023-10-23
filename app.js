@@ -20,12 +20,11 @@ app.use(expressLayouts);
 app.set("layout", "./layouts/main");
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
-  const locals = {
-    title: "SnapNote",
-    description: "SnapNote App",
-  };
-  res.render("index", locals);
+app.use("/", require("./server/routes/index"));
+app.use("/", require("./server/routes/dashboard"));
+
+app.get("*", (req, res) => {
+  res.status(404).render("404");
 });
 
 app.listen(port, () => {
