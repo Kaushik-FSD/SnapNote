@@ -6,7 +6,7 @@ exports.dashboard = async (req, res) => {
     title: "SNAPNOTE - Dashboard",
     description: "SnapNote - Note taking app",
   };
-  res.render("dashboard", {
+  res.render("dashboard/index", {
     locals,
     layout: "../views/layouts/dashboard",
   });
