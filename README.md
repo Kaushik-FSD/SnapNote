@@ -24,4 +24,4 @@ $ npm install
 $ npm start
 ```
 
-## You are ready to fo, keep coding 💝
+## You are ready to go, keep coding 💝
