@@ -35,11 +35,13 @@ passport.use(
   )
 );
 
+// Google Login Route
 router.get(
   "/auth/google",
   passport.authenticate("google", { scope: ["email", "profile"] })
 );
 
+// Retrieve user data
 router.get(
   "/google/callback",
   passport.authenticate("google", {
@@ -49,20 +51,22 @@ router.get(
 );
 
 // Route if something goes wrong
-router.get("/login-failure", (req, res) => {
-  res.send("Something went wrong...");
+router.get('/login-failure', (req, res) => {
+  res.send('Something went wrong...');
 });
 
-router.get("/logout", (req, res) => {
-  req.session.destroy((error) => {
-    if (error) {
+// Destroy user session
+router.get('/logout', (req, res) => {
+  req.session.destroy(error => {
+    if(error) {
       console.log(error);
-      res.send("Error loggin out");
+      res.send('Error loggin out');
     } else {
-      res.redirect("/");
+      res.redirect('/')
     }
-  });
+  })
 });
+
 
 // Presist user data after successful authentication
 passport.serializeUser(function (user, done) {
@@ -70,7 +74,7 @@ passport.serializeUser(function (user, done) {
 });
 
 // Retrieve user data from session.
-// old Code
+// Original Code
 // passport.deserializeUser(function (id, done) {
 //   User.findById(id, function (err, user) {
 //     done(err, user);
@@ -86,4 +90,8 @@ passport.deserializeUser(async (id, done) => {
     done(err, null);
   }
 });
+
+
+
+
 module.exports = router;

@@ -95,3 +95,43 @@ h6 {
   right: -50px;
   bottom: -30px;
 }
+
+footer {
+  background-color: rgb(51, 51, 51);
+  color: rgb(
+    215,
+    215,
+    215
+  ); /* You can set the text color to white for better visibility */
+  padding: 10px; /* Add padding for spacing */
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
+
+.containerAbout {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.profile-image {
+  border-radius: 0%;
+  max-width: 200px;
+  margin: 0 auto 20px;
+  display: block;
+}
+.intro {
+  font-size: 18px;
+  margin: 0 0 20px;
+}
+.links {
+  margin: 20px 0;
+}
+.links a {
+  text-decoration: none;
+  color: #0077b5;
+  margin: 0 10px;
+  font-size: 20px;
+}

@@ -4,8 +4,8 @@
  */
 exports.homepage = async (req, res) => {
   const locals = {
-    title: "SNAPNOTE",
-    description: "SnapNote - Note taking app",
+    title: "SnapNotes",
+    description: "Free NodeJS Notes App.",
   };
   res.render("index", {
     locals,
@@ -13,22 +13,14 @@ exports.homepage = async (req, res) => {
   });
 };
 
-exports.about = async (req, res) => {
-  const locals = {
-    title: "About - SNAPNOTE",
-    description: "SnapNote - Note taking app",
-  };
-  res.render("about", locals);
-};
-
 /**
  * GET /
  * About
  */
-// exports.about = async (req, res) => {
-//   const locals = {
-//     title: "About - NodeJs Notes",
-//     description: "Free NodeJS Notes App.",
-//   };
-//   res.render("about", locals);
-// };
+exports.about = async (req, res) => {
+  const locals = {
+    title: "SnapNptes - About",
+    description: "Free NodeJS Notes App.",
+  };
+  res.render("about", locals);
+};
